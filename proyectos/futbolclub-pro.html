@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Caso de estudio de FútbolClub Pro: arquitectura multi-club, Laravel, pruebas automatizadas y metodología de desarrollo. Proyecto de Gabriel Molina.">
+  <meta name="theme-color" content="#08121f">
+  <title>FútbolClub Pro | Caso de estudio técnico — GM.DEV</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .case-main{padding-top:68px;padding-bottom:95px;max-width:1000px}
+    .case-back{display:inline-block;color:#71e2ce;margin-bottom:36px}
+    .case-header h1{font-size:clamp(36px,5vw,61px);max-width:880px}
+    .case-header .lead{max-width:780px}
+    .case-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,1fr);gap:32px;margin-top:48px}
+    .case-panel{background:var(--surface);border:1px solid var(--line);padding:26px;border-radius:14px}
+    .case-panel h2{font-size:25px}
+    .case-panel p,.case-panel li{color:var(--muted)}
+    .case-panel ul{padding-left:20px;margin:0}
+    .case-panel li+li{margin-top:12px}
+    .case-section{margin-top:32px}
+    .case-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:750}
+    .case-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}
+    .case-proof div{border:1px solid var(--line);padding:20px;border-radius:12px;background:var(--surface-2)}
+    .case-proof strong{display:block;font-size:22px}
+    .case-proof span{font-size:12px;color:var(--muted)}
+    .case-image{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line)}
+    .case-caption{font-size:12px;color:var(--muted);margin-top:10px}
+    .case-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    @media(max-width:760px){.case-grid{grid-template-columns:1fr}.case-proof{grid-template-columns:1fr}.case-main{padding-top:38px}}
+  </style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-header"><nav class="container nav" aria-label="Navegación principal">
+<a class="brand" href="../index.html#inicio"><span class="brand-symbol">&lt;/&gt;</span> GM<span class="brand-dot">.</span>DEV</a>
+<a class="nav-cta" href="../index.html#proyectos">← Volver a proyectos</a>
+</nav></header>
+<main class="container case-main" id="contenido">
+ <a class="case-back" href="../index.html#proyectos">← Todos los proyectos</a>
+ <div class="case-header">
+  <span class="eyebrow">CASO DE ESTUDIO · PROYECTO INDEPENDIENTE</span>
+  <h1>FútbolClub Pro: gestión deportiva con <span class="gradient-text">Laravel</span></h1>
+  <p class="lead">Plataforma web en desarrollo para centralizar clubes, jugadores, categorías, eventos, convocatorias y asistencias. Este caso describe decisiones técnicas y evidencias documentadas; no es una demostración en vivo ni un producto comercial finalizado.</p>
+  <div class="hero-tags"><span>PHP</span><span>Laravel 12</span><span>Livewire 3</span><span>MySQL / SQLite</span><span>PHPUnit</span><span>GitHub Actions</span></div>
+ </div>
+ <div class="case-proof" aria-label="Evidencias de pruebas documentadas">
+  <div><strong>408</strong><span>Pruebas aprobadas en ejecución local · 29/10/2026</span></div>
+  <div><strong>1.270</strong><span>Aserciones en esa ejecución local</span></div>
+  <div><strong>3 versiones</strong><span>CI exitosa con PHP 8.2, 8.3 y 8.4 · 29/10/2026</span></div>
+ </div>
+ <div class="case-grid">
+   <div>
+    <section class="case-panel"><span class="case-kicker">01 / Desafío</span><h2>Centralizar la operación de un club</h2>
+    <p>Los clubes y escuelas deportivas necesitan organizar distintas tareas administrativas y deportivas. El objetivo del proyecto es reunir procesos hoy dispersos en una aplicación y facilitar el trabajo de responsables y entrenadores.</p></section>
+    <section class="case-panel case-section"><span class="case-kicker">02 / Solución desarrollada</span><h2>Un núcleo deportivo modular</h2>
+    <ul><li>Clubes, sedes, categorías y jugadores.</li><li>Entrenamientos, partidos y reuniones con estados y filtros.</li><li>Convocatorias, respuestas RSVP mediante enlaces individuales y asistencia.</li><li>Personal del club, invitaciones de colaboración y responsables familiares.</li></ul></section>
+    <section class="case-panel case-section"><span class="case-kicker">03 / Ingeniería</span><h2>Arquitectura, permisos y calidad</h2>
+    <p>La arquitectura contempla múltiples clubes mediante un contexto de institución activa y políticas de autorización para limitar el acceso a datos y operaciones. El desarrollo utiliza Laravel, Eloquent, Livewire y una base de datos relacional.</p>
+    <p>El showcase documenta pruebas automatizadas de autenticación, autorización, aislamiento entre clubes, actividades, convocatorias y asistencia. Los resultados indicados arriba corresponden a octubre de 2026 y no garantizan el estado de futuras versiones.</p></section>
+    <section class="case-panel case-section"><span class="case-kicker">04 / Estado actual</span><h2>MVP en evolución</h2>
+    <p>El núcleo deportivo tiene funcionalidades desarrolladas. Los módulos de cuotas, cobros e integración de pagos están previstos y no se presentan como operativos. La interfaz y los controles de privacidad continúan evolucionando.</p></section>
+   </div>
+   <aside>
+    <div class="case-panel">
+     <span class="case-kicker">Evidencia visual</span><h2>Dashboard del sistema</h2>
+     <a href="https://github.com/Jgmdevelopers/futbolclub-pro-showcase" target="_blank" rel="noopener noreferrer">
+      <img class="case-image" src="https://raw.githubusercontent.com/Jgmdevelopers/futbolclub-pro-showcase/main/assets/dashboard-real.png" alt="Captura publicada del dashboard de FútbolClub Pro, plataforma de gestión deportiva." loading="lazy" width="600" height="308">
+     </a>
+     <p class="case-caption">Imagen real publicada en el showcase público del proyecto. La aplicación no ofrece una demostración pública.</p>
+     <div class="case-actions"><a class="btn primary" href="https://github.com/Jgmdevelopers/futbolclub-pro-showcase" target="_blank" rel="noopener noreferrer">Ver showcase ↗</a></div>
+    </div>
+    <div class="case-panel case-section"><span class="case-kicker">Publicación responsable</span><h2>Alcance y privacidad</h2><p>El código principal no se publica en esta ficha. No se incluyen credenciales, datos de menores, lógica interna ni enlaces de acceso a sistemas privados.</p></div>
+   </aside>
+ </div>
+ <div class="case-actions"><a class="btn primary" href="../index.html#contacto">Hablemos de tu proyecto ↗</a><a class="btn secondary" href="../index.html#proyectos">Volver al portfolio</a></div>
+</main>
+<footer><div class="container footer-inner"><span><strong>GM.DEV</strong> · Gabriel Molina</span><span>Caso de estudio · Proyecto en desarrollo</span></div></footer>
+</body>
+</html>
