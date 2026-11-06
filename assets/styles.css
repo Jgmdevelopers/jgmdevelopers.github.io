@@ -647,3 +647,42 @@ footer {
     align-items: flex-start;
   }
 }
+
+
+/* GM.DEV v1.1 — microinteracciones y accesibilidad */
+:root { --motion-ease: cubic-bezier(.2,.7,.2,1); }
+html { scroll-padding-top: 88px; }
+.service-card, .project-card, .contact-detail {
+  transition: transform 220ms var(--motion-ease), border-color 220ms ease, box-shadow 220ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover, .project-card:hover {
+    transform: translateY(-5px);
+    border-color: #4a9b9b;
+    box-shadow: 0 14px 34px rgba(0,0,0,.2);
+  }
+}
+.nav-links a[aria-current="location"] { color: var(--accent); }
+.nav-links a[aria-current="location"]:not(.nav-cta) {
+  text-decoration: underline;
+  text-underline-offset: 9px;
+  text-decoration-thickness: 2px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .motion-ready .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 440ms var(--motion-ease), transform 440ms var(--motion-ease);
+  }
+  .motion-ready .reveal.is-visible { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
