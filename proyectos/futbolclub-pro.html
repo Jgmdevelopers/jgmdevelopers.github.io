@@ -25,6 +25,14 @@
     .case-proof strong{display:block;font-size:22px}
     .case-proof span{font-size:12px;color:var(--muted)}
     .case-image{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line)}
+    .case-image-trigger{width:100%;display:block;position:relative;text-align:left;border:0;background:transparent;padding:0;cursor:zoom-in;color:inherit}
+    .case-image-trigger:focus-visible,.case-modal-close:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+    .case-zoom-hint{position:absolute;right:10px;bottom:10px;background:rgba(8,18,31,.9);border:1px solid #4a9b9b;border-radius:8px;padding:5px 11px;font-size:12px}
+    .case-modal{width:min(96vw,1300px);max-height:95vh;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--text)}
+    .case-modal::backdrop{background:rgba(0,0,0,.85)}
+    .case-modal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}
+    .case-modal-close{cursor:pointer;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--text);padding:8px 13px}
+    .case-modal img{display:block;width:100%;height:auto;max-height:calc(95vh - 100px);object-fit:contain}
     .case-caption{font-size:12px;color:var(--muted);margin-top:10px}
     .case-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
     @media(max-width:760px){.case-grid{grid-template-columns:1fr}.case-proof{grid-template-columns:1fr}.case-main{padding-top:38px}}
@@ -64,9 +72,10 @@
    <aside>
     <div class="case-panel">
      <span class="case-kicker">Evidencia visual</span><h2>Dashboard del sistema</h2>
-     <a href="https://github.com/Jgmdevelopers/futbolclub-pro-showcase" target="_blank" rel="noopener noreferrer">
+     <button class="case-image-trigger" type="button" aria-label="Ampliar imagen del dashboard de FútbolClub Pro" aria-haspopup="dialog" aria-controls="dashboard-modal">
       <img class="case-image" src="https://raw.githubusercontent.com/Jgmdevelopers/futbolclub-pro-showcase/main/assets/dashboard-real.png" alt="Captura publicada del dashboard de FútbolClub Pro, plataforma de gestión deportiva." loading="lazy" width="600" height="308">
-     </a>
+      <span class="case-zoom-hint" aria-hidden="true">Ampliar imagen ↗</span>
+     </button>
      <p class="case-caption">Imagen real publicada en el showcase público del proyecto. La aplicación no ofrece una demostración pública.</p>
      <div class="case-actions"><a class="btn primary" href="https://github.com/Jgmdevelopers/futbolclub-pro-showcase" target="_blank" rel="noopener noreferrer">Ver showcase ↗</a></div>
     </div>
@@ -74,7 +83,31 @@
    </aside>
  </div>
  <div class="case-actions"><a class="btn primary" href="../index.html#contacto">Hablemos de tu proyecto ↗</a><a class="btn secondary" href="../index.html#proyectos">Volver al portfolio</a></div>
+  <dialog id="dashboard-modal" class="case-modal" aria-labelledby="dashboard-modal-title">
+    <div class="case-modal-head">
+      <strong id="dashboard-modal-title">Dashboard de FútbolClub Pro</strong>
+      <button type="button" class="case-modal-close" aria-label="Cerrar imagen ampliada">Cerrar ✕</button>
+    </div>
+    <img src="https://raw.githubusercontent.com/Jgmdevelopers/futbolclub-pro-showcase/main/assets/dashboard-real.png" alt="Captura ampliada del dashboard de FútbolClub Pro." width="1783" height="915">
+  </dialog>
 </main>
+<script>
+  const imageTrigger = document.querySelector('.case-image-trigger');
+  const dashboardModal = document.querySelector('#dashboard-modal');
+  const closeModal = document.querySelector('.case-modal-close');
+
+  if (imageTrigger && dashboardModal && typeof dashboardModal.showModal === 'function') {
+    imageTrigger.addEventListener('click', () => dashboardModal.showModal());
+    closeModal?.addEventListener('click', () => dashboardModal.close());
+    dashboardModal.addEventListener('click', event => {
+      if (event.target === dashboardModal) dashboardModal.close();
+    });
+  } else if (imageTrigger) {
+    imageTrigger.addEventListener('click', () => {
+      window.open(imageTrigger.querySelector('img')?.src, '_blank', 'noopener,noreferrer');
+    });
+  }
+</script>
 <footer><div class="container footer-inner"><span><strong>GM.DEV</strong> · Gabriel Molina</span><span>Caso de estudio · Proyecto en desarrollo</span></div></footer>
 </body>
 </html>
