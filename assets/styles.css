@@ -575,6 +575,7 @@ footer {
     gap: 25px;
   }
 }
+
 @media (max-width: 650px) {
   .container {
     padding-inline: 20px;
@@ -648,21 +649,32 @@ footer {
   }
 }
 
-
 /* GM.DEV v1.1 — microinteracciones y accesibilidad */
-:root { --motion-ease: cubic-bezier(.2,.7,.2,1); }
-html { scroll-padding-top: 88px; }
-.service-card, .project-card, .contact-detail {
-  transition: transform 220ms var(--motion-ease), border-color 220ms ease, box-shadow 220ms ease;
+:root {
+  --motion-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+html {
+  scroll-padding-top: 88px;
+}
+.service-card,
+.project-card,
+.contact-detail {
+  transition:
+    transform 220ms var(--motion-ease),
+    border-color 220ms ease,
+    box-shadow 220ms ease;
 }
 @media (hover: hover) and (pointer: fine) {
-  .service-card:hover, .project-card:hover {
+  .service-card:hover,
+  .project-card:hover {
     transform: translateY(-5px);
     border-color: #4a9b9b;
-    box-shadow: 0 14px 34px rgba(0,0,0,.2);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
   }
 }
-.nav-links a[aria-current="location"] { color: var(--accent); }
+.nav-links a[aria-current="location"] {
+  color: var(--accent);
+}
 .nav-links a[aria-current="location"]:not(.nav-cta) {
   text-decoration: underline;
   text-underline-offset: 9px;
@@ -672,17 +684,89 @@ html { scroll-padding-top: 88px; }
   .motion-ready .reveal {
     opacity: 0;
     transform: translateY(14px);
-    transition: opacity 440ms var(--motion-ease), transform 440ms var(--motion-ease);
+    transition:
+      opacity 440ms var(--motion-ease),
+      transform 440ms var(--motion-ease);
   }
-  .motion-ready .reveal.is-visible { opacity: 1; transform: none; }
+  .motion-ready .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal { opacity: 1 !important; transform: none !important; }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* GM.DEV v1.3 — Flujo de datos GM Predict AI */
+
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.pipeline-step {
+  position: relative;
+  padding: 24px;
+  border: 1px solid #293d51;
+  border-radius: 14px;
+  background: #101f30;
+}
+
+.pipeline-step > span {
+  display: block;
+  margin-bottom: 18px;
+  color: #a6b8ca;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pipeline-step h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.pipeline-step p {
+  color: #b6c7d7;
+  font-size: 14px;
+}
+
+.pipeline-step.implemented {
+  border-color: #328c7d;
+  background: #102d31;
+}
+
+.pipeline-step.implemented > span {
+  color: #70e6cf;
+}
+
+.pipeline-step.planned {
+  border-style: dashed;
+}
+
+@media (max-width: 900px) {
+  .pipeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .pipeline {
+    grid-template-columns: 1fr;
+  }
 }
