@@ -161,9 +161,67 @@
         </div>
       </section>
 
+      <section class="section container" id="calidad">
+        <div class="section-head">
+          <span class="section-label">04 / CALIDAD TÉCNICA</span>
+          <h2>Validar antes de procesar.</h2>
+
+          <p>
+            GM Predict AI incorpora pruebas automatizadas con pytest para
+            verificar las reglas de validación, la integridad de los datos
+            temporales y el comportamiento de la ingesta ante situaciones
+            inesperadas.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="card-icon" aria-hidden="true">01</span>
+            <h3>Validación OHLCV</h3>
+            <p>
+              Pruebas de precios, volúmenes, estructuras inválidas, valores no
+              finitos y timestamps incorrectos.
+            </p>
+            <span class="card-meta"> pytest · Validación de datos </span>
+          </article>
+
+          <article class="service-card">
+            <span class="card-icon" aria-hidden="true">02</span>
+            <h3>Integridad temporal</h3>
+            <p>
+              Detección de registros duplicados, intervalos faltantes,
+              timestamps desalineados y velas abiertas.
+            </p>
+            <span class="card-meta"> Series temporales · Consistencia </span>
+          </article>
+
+          <article class="service-card">
+            <span class="card-icon" aria-hidden="true">03</span>
+            <h3>Pruebas con mocks</h3>
+            <p>
+              Simulación de respuestas externas para comprobar descargas por
+              lotes, parámetros de consulta y condiciones de error sin depender
+              de Internet.
+            </p>
+            <span class="card-meta"> unittest.mock · Pruebas aisladas </span>
+          </article>
+        </div>
+
+        <div class="hero-actions">
+          <a
+            class="btn secondary"
+            href="https://github.com/Jgmdevelopers/gm-predict-ai/tree/main/tests"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Consultar pruebas en GitHub ↗
+          </a>
+        </div>
+      </section>
+
       <section class="section section-alt" id="evolucion">
         <div class="container">
-          <span class="section-label">04 / EVOLUCIÓN</span>
+          <span class="section-label">05 / EVOLUCIÓN</span>
 
           <h2>Del dato al modelo.</h2>
 
@@ -177,7 +235,7 @@
       </section>
 
       <section class="section container" id="contacto">
-        <span class="section-label">05 / CONTACTO</span>
+        <span class="section-label">06 / CONTACTO</span>
         <h2>¿Necesitás automatizar procesos con Python?</h2>
 
         <p class="lead">
