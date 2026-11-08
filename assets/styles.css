@@ -770,3 +770,179 @@ html {
     grid-template-columns: 1fr;
   }
 }
+
+/* GM.DEV v1.4 — Sobre mí e identidad profesional */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(36px, 6vw, 90px);
+  align-items: center;
+}
+
+.about-photo {
+  max-width: 420px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.about-photo-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid #344650;
+  border-radius: 22px;
+  background: #101419;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.35);
+}
+
+.about-photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-photo-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 16px;
+  color: #a9c1d0;
+  font-size: 13px;
+}
+
+.about-status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #5be8cd;
+}
+
+.about-content h2 {
+  margin-bottom: 12px;
+}
+
+.about-content p {
+  color: #b6c7d7;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-content .about-role {
+  color: #70e6cf;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.about-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.about-skills span {
+  padding: 6px 11px;
+  border: 1px solid #315466;
+  border-radius: 8px;
+  background: #152539;
+  color: #c5d9e5;
+  font-size: 12px;
+}
+
+.about-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+@media (max-width: 900px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .about-photo {
+    max-width: 330px;
+  }
+}
+
+@media (max-width: 650px) {
+  .about-photo {
+    max-width: 290px;
+  }
+
+  .about-content h2 {
+    font-size: clamp(30px, 8vw, 40px);
+  }
+
+  .about-actions {
+    align-items: stretch;
+  }
+
+  .about-actions .btn {
+    width: 100%;
+  }
+}
+/* GM.DEV v1.4 — Identidad visual negro premium */
+
+:root {
+  --page-black: #050608;
+  --surface-black: #101419;
+  --border-dark: #26333d;
+}
+
+/* Fondo general */
+html,
+body {
+  background-color: var(--page-black);
+}
+
+/* Secciones principales */
+.section,
+.section-alt,
+.contact-section,
+.about-section {
+  background: var(--page-black);
+}
+
+/* Encabezado */
+.site-header {
+  background: #080b10;
+  border-bottom-color: var(--border-dark);
+}
+
+/* Tarjetas */
+.service-card,
+.project-card,
+.contact-detail,
+.pipeline-step {
+  background: var(--surface-black);
+  border-color: var(--border-dark);
+}
+
+/* Tarjetas de proyecto: conservar su identidad */
+.project-art.football {
+  background: linear-gradient(135deg, #112a25, #080c0e);
+}
+
+.project-art.predict {
+  background: linear-gradient(135deg, #102033, #080c0e);
+}
+
+.project-art.adapta {
+  background: linear-gradient(135deg, #25192e, #080c0e);
+}
+
+/* Footer */
+footer {
+  background: var(--page-black);
+  border-top-color: var(--border-dark);
+}
